@@ -3,7 +3,7 @@ import subprocess
 from datetime import datetime
 
 # Step 1: Setup base directory
-base_dir = r"D:\yt-dlp"
+base_dir = r"D:\yt-dlp\Downloads"
 os.makedirs(base_dir, exist_ok=True)
 os.chdir(base_dir)
 
@@ -59,6 +59,7 @@ subprocess.run([
     r".\yt-dlp.exe",
     "-P", folder_path,
     "-f", format_string,
+    "--merge-output-format", "mp4",
     url
 ])
 
