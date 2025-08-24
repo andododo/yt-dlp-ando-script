@@ -1,3 +1,5 @@
 # yt-dlp-ando-script
-personal yt-dlp script for easier downloading of my format
-need to add log in script
+Personal yt-dlp script for easier downloading of my format.
+
+Use the .py file for now.
+The .bat file is inconsistent with handling the new yt-dlp.

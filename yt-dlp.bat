@@ -1,25 +1,22 @@
 @echo off
 setlocal enabledelayedexpansion
 
-:: Step 1: Change directory to Downloads
-cd %USERPROFILE%\Downloads
+:: Step 1: Change directory to D: drive
+cd /d D:\yt-dlp
 
 :: Step 2: Create a folder with date and time
 for /f "tokens=2 delims==" %%I in ('wmic os get localdatetime /value') do set datetime=%%I
 set "datetime=%datetime:~0,8%_%datetime:~8,6%"
 set "folder=yt-dlp_%datetime%"
-mkdir %folder%
+mkdir %folder% # Create folder command
 
-:: Step 3: Change directory to the folder
-cd %folder%
-
-:: Step 4: Get YouTube URL from user
+:: Step 3: Get YouTube URL from user
 set /p url="Enter YouTube URL: "
 
 :: Run yt-dlp command the outputs a list of formats (-F)
-yt-dlp -F %url%
+.\yt-dlp.exe -F %url%
 
-:: Step 5: Get quality selection from user
+:: Step 4: Get quality selection from user
 :quality_selection
 echo Select video quality:
 echo [1] 144p
@@ -55,7 +52,7 @@ if "%valid_input%"=="true" (
 )
 
 :: Run yt-dlp command with selected quality
-yt-dlp -f "bv[height=!quality!][vcodec*=avc][protocol*=https]+ba[acodec*=mp] / bv[height=!quality!][vcodec*=av01]+ba[acodec*=mp] / bv[height=!quality!][vcodec*=vp]+ba[acodec*=mp] / bv[height<=!quality!][vcodec*=avc][protocol*=https]+ba[acodec*=mp]" %url%
+.\yt-dlp.exe -P "D:/yt-dlp/%folder%" -f "bv[height=!quality!][vcodec*=avc][protocol*=https]+ba[acodec*=mp] / bv[height=!quality!][vcodec*=av01]+ba[acodec*=mp] / bv[height=!quality!][vcodec*=vp]+ba[acodec*=mp] / bv[height<=!quality!][vcodec*=avc][protocol*=https]+ba[acodec*=mp]" %url%
 
 :end
 echo.
