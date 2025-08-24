@@ -2,12 +2,12 @@ import os
 import subprocess
 from datetime import datetime
 
-# Step 1: Base directory
+# Step 1: Setup base directory
 base_dir = r"D:\yt-dlp"
 os.makedirs(base_dir, exist_ok=True)
 os.chdir(base_dir)
 
-# Step 2: Create folder with date and time
+# Step 2: Create folder with datetime
 now = datetime.now().strftime("%Y%m%d_%H%M%S")
 folder = f"yt-dlp_{now}"
 folder_path = os.path.join(base_dir, folder)
