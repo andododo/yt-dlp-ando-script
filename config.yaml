@@ -1,0 +1,5 @@
+# path of .exe files and needed files
+yt_dlp_path: "D:/yt-dlp/yt-dlp.exe"
+
+# path of downloaded youtube videos
+download_dir: "D:/yt-dlp/Downloads"

@@ -1,9 +1,16 @@
 import os
 import subprocess
 from datetime import datetime
+import yaml
+
+# Load config.yaml
+with open("config.yaml", "r") as f:
+    config = yaml.safe_load(f)
+
+yt_dlp_path = config["yt_dlp_path"]
+base_dir = config["download_dir"]
 
 # Step 1: Setup base directory
-base_dir = r"D:\yt-dlp\Downloads"
 os.makedirs(base_dir, exist_ok=True)
 os.chdir(base_dir)
 
@@ -15,8 +22,6 @@ os.makedirs(folder_path, exist_ok=True)
 
 # Step 3: Get YouTube URL
 url = input("Enter YouTube URL: ").strip()
-
-yt_dlp_path = r"D:\yt-dlp\yt-dlp.exe"
 
 # Step 4: Show available formats
 subprocess.run([yt_dlp_path, "-F", url])
