@@ -16,8 +16,10 @@ os.makedirs(folder_path, exist_ok=True)
 # Step 3: Get YouTube URL
 url = input("Enter YouTube URL: ").strip()
 
+yt_dlp_path = r"D:\yt-dlp\yt-dlp.exe"
+
 # Step 4: Show available formats
-subprocess.run([r".\yt-dlp.exe", "-F", url])
+subprocess.run([yt_dlp_path, "-F", url])
 
 # Step 5: Ask for quality
 qualities = {
@@ -56,7 +58,7 @@ else:
     )
 
 subprocess.run([
-    r".\yt-dlp.exe",
+    yt_dlp_path,
     "-P", folder_path,
     "-f", format_string,
     "--merge-output-format", "mp4",
