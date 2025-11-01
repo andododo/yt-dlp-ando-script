@@ -11,13 +11,18 @@ pip install pyyaml
 ```
 
 # yt-dlp Download
-I am using version `yt-dlp 2025.08.22`
+I am using version `yt-dlp 2025.10.22`
 
-[Source File](https://github.com/yt-dlp/yt-dlp/releases/tag/2025.08.22)
+[Source File](https://github.com/yt-dlp/yt-dlp/releases)
 
-[Download Here](https://github.com/yt-dlp/yt-dlp/releases/download/2025.08.22/yt-dlp_win.zip)
+[Download Here](https://github.com/yt-dlp/yt-dlp/releases/download/2025.10.22/yt-dlp_win.zip)
 
-### Note: Remember to unzip the file first
+Download the `yt-dlp_win.zip` file
+
+### How to unzip:
+
+Place the `.zip` file in main_path
+Check `config.yaml` file for this reference
 
 
 # Config File

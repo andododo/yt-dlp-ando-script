@@ -3,3 +3,6 @@ yt_dlp_path: "D:/yt-dlp/yt-dlp.exe"
 
 # path of downloaded youtube videos
 download_dir: "D:/yt-dlp/Downloads"
+
+# path where you should place the zip file
+main_path: "D:/yt-dlp"
